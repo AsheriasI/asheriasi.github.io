@@ -16,6 +16,8 @@
       --accent: #2563eb; /* link blue */
       --border: #e5e7eb;
       --code: #111827;
+      /* background image url (used when <body> has class 'has-bg') */
+      --bg-image: url('./background.jpg');
     }
     @media (prefers-color-scheme: dark) {
       :root {
@@ -82,8 +84,8 @@
     }
 
     /* Optional subtle page background image; set --bg-image to a URL to enable */
-    body::before { content: ""; position: fixed; inset: 0; z-index: -1; background: var(--bg); }
-    body.has-bg::before { background: linear-gradient(to bottom, rgba(0,0,0,.3), rgba(0,0,0,.3)), center/cover no-repeat var(--bg-image); filter: saturate(.9) contrast(1.05); opacity: .18; }
+  body::before { content: ""; position: fixed; inset: 0; z-index: -1; background: var(--bg); }
+  body.has-bg::before { background: linear-gradient(to bottom, rgba(0,0,0,.3), rgba(0,0,0,.3)), center/cover no-repeat var(--bg-image); filter: saturate(.9) contrast(1.05); opacity: .18; }
 
     /* subtle particle drift using CSS only */
     .rail::before, .rail::after {
@@ -129,7 +131,7 @@
     }
   </style>
 </head>
-<body>
+<body class="has-bg">
   <div class="nav" role="navigation" aria-label="Section navigation">
     <div class="nav-inner">
       <div class="brand">Your Name</div>
@@ -262,10 +264,7 @@
 
     sections.forEach(sec => observer.observe(sec));
 
-    // Optional: enable a background image – add class `has-bg` to <body> and set CSS var.
-    // Example:
-    // document.body.classList.add('has-bg');
-    // document.documentElement.style.setProperty('--bg-image', 'url(./ocean.jpg)');
+    // Background image is enabled via CSS variable in :root and <body class="has-bg">
   </script>
 
 </body>
