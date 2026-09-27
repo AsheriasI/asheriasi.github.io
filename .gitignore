@@ -1,0 +1,9 @@
+# Personal/local project material — keep out of the public repository.
+commands.txt
+Ansh-In-Draft-website-handoff.md
+legacy/
+
+# Local tooling and operating-system files.
+.DS_Store
+Thumbs.db
+.vscode/
