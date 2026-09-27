@@ -79,6 +79,9 @@
 
       .timeline p { max-width: 590px; }
 
+      /* Let spacing, rather than horizontal rules, separate the main sections. */
+      main > section { border-bottom: 0; }
+
       @media (max-width: 760px) {
         .timeline { padding-left: 34px; }
         .timeline article::before { left: -31px; }
