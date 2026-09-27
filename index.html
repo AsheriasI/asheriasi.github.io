@@ -97,8 +97,16 @@
       .work-toggle:hover,
       .work-toggle[aria-expanded="true"] { color: var(--paper); }
 
-      .work-details { margin-top: 14px; }
-      .work-details[hidden] { display: none; }
+      .work-details { display: none; margin-top: 14px; }
+      .work-details.is-open { display: block; }
+
+      .work-toggle .toggle-symbol {
+        display: inline-block;
+        width: 14px;
+        margin-left: 4px;
+        font-size: 15px;
+        line-height: 0;
+      }
 
       @media (max-width: 760px) {
         .timeline { padding-left: 34px; }
@@ -143,7 +151,7 @@
         <h1>Ansh,<br><em>In Draft.</em></h1>
         <div class="intro">
           <p>I’m interested in how intelligent systems represent information, how they behave, and what happens when we try to understand or change either.</p>
-          <p>My recent work has taken me from representation learning and model evaluation to behavioural steering and the security of stateful AI agents. I’m currently exploring questions where these threads meet—especially those relevant to making increasingly capable systems safer.</p>
+          <p>My recent work spans attacks that propagate through the memory and documents of AI assistants, reinforcement-learning-trained interventions in language-model activations, and the evaluation of visual and speech models. I’m interested in what models encode, how that shapes their behaviour, and how to make increasingly capable systems more reliable and safer.</p>
         </div>
         <a class="arrow" href="#work">Selected work ↓</a>
       </section>
@@ -155,23 +163,23 @@
         <div class="list">
           <article>
             <small>2026<br>Submitted research</small>
-            <div><h3>Share-borne AI Virus</h3><i>Memory-hopping attacks across LLM agents</i><button class="work-toggle" aria-expanded="false" aria-controls="work-spar">Read more</button><div id="work-spar" class="work-details" hidden><p>Research on how adversarial content can travel through persistent memory and shared artefacts between otherwise independent assistants—examining injection, propagation, reinfection, and multi-hop persistence in controlled agent workflows.</p></div></div>
+            <div><h3>Share-borne AI Virus</h3><i>Memory-hopping attacks across LLM agents</i><button class="work-toggle" type="button" aria-expanded="false" aria-controls="work-spar"><span>Read more</span><span class="toggle-symbol" aria-hidden="true">+</span></button><div id="work-spar" class="work-details"><p>In SPAR research, I designed controlled experiments with independently operated assistants whose users exchange documents. We tested whether adversarial text in one artifact could enter an assistant’s persistent memory, resurface in an unrelated document it later writes, and then be taken up by another assistant. I worked on memory injection, reinfection and multi-hop hand-offs, measuring whether the attack persisted and how far it spread.</p></div></div>
           </article>
           <article>
             <small>2026—<br>Ongoing / preliminary</small>
-            <div><h3>Sycophancy Is Steerable</h3><i>Learning behavioural directions with RL</i><button class="work-toggle" aria-expanded="false" aria-controls="work-sycophancy">Read more</button><div id="work-sycophancy" class="work-details" hidden><p>An ongoing investigation of per-layer steering vectors trained with reinforcement learning and an LLM judge, while keeping the base model frozen. Further evaluation and sanity checks are part of the work.</p></div></div>
+            <div><h3>Sycophancy Is Steerable</h3><i>Learning behavioural directions with RL</i><button class="work-toggle" type="button" aria-expanded="false" aria-controls="work-sycophancy"><span>Read more</span><span class="toggle-symbol" aria-hidden="true">+</span></button><div id="work-sycophancy" class="work-details"><p>In an ARENA capstone, I froze LLaMA 3.1 8B-Instruct and trained additive steering vectors in its transformer layers using RLOO-style reinforcement learning. GPT-5 scored generated answers for agreement and flattery, while a KL penalty constrained drift from the unsteered model. Toy objectives helped validate the training loop; early sycophancy runs changed the judged responses. The work remains preliminary, with stronger controls and independent behavioural evaluation still to do.</p></div></div>
           </article>
           <article>
             <small>2026<br>Multimodal evaluation</small>
-            <div><h3>ZeroBench</h3><button class="work-toggle" aria-expanded="false" aria-controls="work-zerobench">Read more</button><div id="work-zerobench" class="work-details" hidden><p>A multimodal visual-reasoning benchmark, part of a broader interest in making model evaluation more diagnostic and useful. <a class="project-link" href="https://zerobench.github.io/">Visit the project <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M6 3h7v7" /></svg></a></p></div></div>
+            <div><h3>ZeroBench</h3><button class="work-toggle" type="button" aria-expanded="false" aria-controls="work-zerobench"><span>Read more</span><span class="toggle-symbol" aria-hidden="true">+</span></button><div id="work-zerobench" class="work-details"><p>I co-authored ZeroBench (ICML26), a visual-reasoning benchmark of 100 manually curated questions and 334 diagnostic subquestions. The questions were adversarially filtered against frontier large multimodal models; the paper evaluates 46 models, compares them with a human baseline and analyses where their reasoning breaks down.<a class="project-link" href="https://zerobench.github.io/">Visit the project <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M6 3h7v7" /></svg></a></p></div></div>
           </article>
           <article>
             <small>2025<br>Speech research</small>
-            <div><h3>Speech representations</h3><button class="work-toggle" aria-expanded="false" aria-controls="work-speech">Read more</button><div id="work-speech" class="work-details" hidden><p>Research with WavLM, Whisper, and Wav2Vec2 representations, using phoneme-level evaluation to investigate developmental language disorders. <a class="project-link" href="https://www.cambridge.org/engage/coe/article-details/6926c8f7ef936fb4a2af2d1a">Read the research <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M6 3h7v7" /></svg></a></p></div></div>
+            <div><h3>Speech representations</h3><button class="work-toggle" type="button" aria-expanded="false" aria-controls="work-speech"><span>Read more</span><span class="toggle-symbol" aria-hidden="true">+</span></button><div id="work-speech" class="work-details"><p>At Cambridge’s Machine Intelligence Lab, I developed a speech-assessment pipeline for phonological impairment, including phone-level error scoring, articulatory-feature alignment and cohort analysis. I compared WavLM, Whisper and Wav2Vec2 representations with phoneme-level classifiers. Our poster reports an F1 of 0.826 for detecting mispronounced words through articulatory-feature alignment; distinguishing dyslexic participants from controls remained inconclusive on the small study dataset.<a class="project-link" href="https://www.cambridge.org/engage/coe/article-details/6926c8f7ef936fb4a2af2d1a">Read the research <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M6 3h7v7" /></svg></a></p></div></div>
           </article>
           <article>
             <small>2024—2025<br>Master’s research</small>
-            <div><h3>Additive Gaussian processes</h3><button class="work-toggle" aria-expanded="false" aria-controls="work-gp">Read more</button><div id="work-gp" class="work-details" hidden><p>Research into additive Gaussian processes, exploring interpretable structure in probabilistic models.</p></div></div>
+            <div><h3>Additive Gaussian processes</h3><button class="work-toggle" type="button" aria-expanded="false" aria-controls="work-gp"><span>Read more</span><span class="toggle-symbol" aria-hidden="true">+</span></button><div id="work-gp" class="work-details"><p>For my Master’s project, I investigated identifiability in additive Gaussian processes: different components can explain overlapping parts of the same signal, making the decomposition hard to interpret. I developed mutual-information regularisation to discourage redundant learned components and encourage a more parsimonious decomposition. This project shaped my interest in what an apparently interpretable model actually represents.</p></div></div>
           </article>
         </div>
       </section>
