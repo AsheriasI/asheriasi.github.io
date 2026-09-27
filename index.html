@@ -28,6 +28,61 @@
 
       .contact .links { margin-top: 26px; }
       .contact .footer { padding-top: 56px; }
+
+      /* Chronicle: a connected path rather than a two-column table. */
+      .timeline {
+        position: relative;
+        display: grid;
+        gap: 0;
+        border-top: 0;
+        padding-left: 42px;
+      }
+
+      .timeline::before {
+        position: absolute;
+        top: 10px;
+        bottom: 10px;
+        left: 7px;
+        width: 1px;
+        background: var(--rule);
+        content: "";
+      }
+
+      .timeline article {
+        position: relative;
+        display: block;
+        padding: 0 0 42px;
+        border-bottom: 0;
+      }
+
+      .timeline article:last-child { padding-bottom: 0; }
+
+      .timeline article::before {
+        position: absolute;
+        top: 5px;
+        left: -39px;
+        width: 11px;
+        height: 11px;
+        border: 2px solid var(--ink);
+        border-radius: 50%;
+        background: var(--accent);
+        box-shadow: 0 0 0 1px var(--rule);
+        content: "";
+      }
+
+      .timeline article:first-child::before { background: var(--paper); }
+
+      .timeline article small {
+        margin-bottom: 7px;
+        color: var(--accent);
+      }
+
+      .timeline p { max-width: 590px; }
+
+      @media (max-width: 760px) {
+        .timeline { padding-left: 34px; }
+        .timeline article::before { left: -31px; }
+      }
     </style>
     <style>
       @media (min-width: 761px) { .mobile-toggle { display: none; } }
