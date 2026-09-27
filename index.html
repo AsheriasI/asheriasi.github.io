@@ -17,11 +17,13 @@
     <!-- Compact controls used on mobile screens. -->
     <header>
       <a href="#about">Ansh, <em>In Draft</em></a>
+      <button class="nav-toggle" aria-controls="site-nav" aria-expanded="false">Menu</button>
       <button class="theme" aria-label="Change colour theme">◐ <span>Light</span></button>
     </header>
 
     <!-- Persistent section navigation on desktop. -->
-    <aside>
+    <aside id="site-nav" aria-label="Section navigation">
+      <button class="nav-close" aria-label="Collapse section navigation">×</button>
       <nav>
         <a href="#about" data-id="about"><b>00</b> About</a>
         <a href="#work" data-id="work"><b>01</b> Work</a>
@@ -32,6 +34,7 @@
       </nav>
       <button class="theme rail-theme" aria-label="Change colour theme">◐ <span>Light</span></button>
     </aside>
+    <button class="nav-toggle desktop-toggle" aria-controls="site-nav" aria-expanded="true">Menu</button>
 
     <main>
       <!-- 00: About -->
@@ -60,7 +63,7 @@
           </article>
           <article>
             <small>2026<br>Multimodal evaluation</small>
-            <div><h3>ZeroBench</h3><p>A multimodal visual-reasoning benchmark, part of a broader interest in making model evaluation more diagnostic and useful. <a href="https://zerobench.github.io/">Visit the project ↗</a></p></div>
+            <div><h3>ZeroBench</h3><p>A multimodal visual-reasoning benchmark, part of a broader interest in making model evaluation more diagnostic and useful. <a class="project-link" href="https://zerobench.github.io/">Visit the project <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M6 3h7v7" /></svg></a></p></div>
           </article>
           <article>
             <small>2025<br>Speech research</small>
