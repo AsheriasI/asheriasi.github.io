@@ -13,7 +13,7 @@
 
   const setMenu = (open) => {
     const mobile = matchMedia('(max-width: 760px)').matches;
-    body.classList.toggle(mobile ? 'nav-open' : 'nav-collapsed', !open);
+    body.classList.toggle(mobile ? 'nav-open' : 'nav-collapsed', mobile ? open : !open);
     document.querySelectorAll('.nav-toggle').forEach((button) => button.setAttribute('aria-expanded', String(open)));
   };
 

@@ -8,6 +8,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=DM+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/site.css">
+    <style>
+      @media (min-width: 761px) { .mobile-toggle { display: none; } }
+      @media (max-width: 760px) { .desktop-toggle { display: none !important; } }
+    </style>
     <script src="assets/site.js" defer></script>
   </head>
   <body>
@@ -17,7 +21,7 @@
     <!-- Compact controls used on mobile screens. -->
     <header>
       <a href="#about">Ansh, <em>In Draft</em></a>
-      <button class="nav-toggle" aria-controls="site-nav" aria-expanded="false">Menu</button>
+      <button class="nav-toggle mobile-toggle" aria-controls="site-nav" aria-expanded="false">Contents</button>
       <button class="theme" aria-label="Change colour theme">◐ <span>Light</span></button>
     </header>
 
@@ -34,7 +38,7 @@
       </nav>
       <button class="theme rail-theme" aria-label="Change colour theme">◐ <span>Light</span></button>
     </aside>
-    <button class="nav-toggle desktop-toggle" aria-controls="site-nav" aria-expanded="true">Menu</button>
+    <button class="nav-toggle desktop-toggle" aria-controls="site-nav" aria-expanded="true">Contents</button>
 
     <main>
       <!-- 00: About -->
