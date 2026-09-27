@@ -9,6 +9,27 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=DM+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/site.css">
     <style>
+      /* Keep the final contact note intentionally quieter than a main section. */
+      .contact {
+        min-height: auto;
+        padding-top: 72px;
+        padding-bottom: 56px;
+      }
+
+      .contact h2 {
+        margin-bottom: 18px;
+        font-size: clamp(34px, 4vw, 48px);
+      }
+
+      .contact > p {
+        max-width: 440px;
+        font-size: 16px;
+      }
+
+      .contact .links { margin-top: 26px; }
+      .contact .footer { padding-top: 56px; }
+    </style>
+    <style>
       @media (min-width: 761px) { .mobile-toggle { display: none; } }
       @media (max-width: 760px) { .desktop-toggle { display: none !important; } }
     </style>
@@ -71,7 +92,7 @@
           </article>
           <article>
             <small>2025<br>Speech research</small>
-            <div><h3>Speech representations</h3><p>Research with WavLM, Whisper, and Wav2Vec2 representations, using phoneme-level evaluation to investigate developmental language disorders.</p></div>
+            <div><h3>Speech representations</h3><p>Research with WavLM, Whisper, and Wav2Vec2 representations, using phoneme-level evaluation to investigate developmental language disorders. <a class="project-link" href="https://www.cambridge.org/engage/coe/article-details/6926c8f7ef936fb4a2af2d1a">Read the paper <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M6 3h7v7" /></svg></a></p></div>
           </article>
           <article>
             <small>2024—2025<br>Master’s research</small>
