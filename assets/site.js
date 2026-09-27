@@ -32,15 +32,6 @@
     if (matchMedia('(max-width: 760px)').matches) setMenu(false);
   }));
 
-  document.querySelectorAll('.work-toggle').forEach((button) => button.addEventListener('click', () => {
-    const details = document.getElementById(button.getAttribute('aria-controls'));
-    const expanded = button.getAttribute('aria-expanded') === 'true';
-    button.setAttribute('aria-expanded', String(!expanded));
-    button.querySelector('span').textContent = expanded ? 'Read more' : 'Show less';
-    button.querySelector('.toggle-symbol').textContent = expanded ? '+' : '−';
-    details.classList.toggle('is-open', !expanded);
-  }));
-
   const navItems = document.querySelectorAll('nav a');
   const observer = new IntersectionObserver((entries) => entries.forEach((entry) => {
     if (entry.isIntersecting) navItems.forEach((item) => item.classList.toggle('active', item.dataset.id === entry.target.dataset.id));

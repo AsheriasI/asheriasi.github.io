@@ -83,30 +83,13 @@
       main > section { border-bottom: 0; }
 
       /* Compact work entries; reveal the supporting description on demand. */
-      .work-toggle {
-        margin-top: 14px;
-        border: 0;
-        border-bottom: 1px solid currentColor;
-        background: transparent;
-        color: var(--muted);
-        cursor: pointer;
-        font: 11px "DM Mono", monospace;
-        padding: 0 0 2px;
-      }
-
-      .work-toggle:hover,
-      .work-toggle[aria-expanded="true"] { color: var(--paper); }
-
-      .work-details { display: none; margin-top: 14px; }
-      .work-details.is-open { display: block; }
-
-      .work-toggle .toggle-symbol {
-        display: inline-block;
-        width: 14px;
-        margin-left: 4px;
-        font-size: 15px;
-        line-height: 0;
-      }
+      .work-details { display: block; margin-top: 14px; }
+      .work-details summary { width: fit-content; border-bottom: 1px solid currentColor; color: var(--muted); cursor: pointer; font: 11px "DM Mono", monospace; list-style: none; padding-bottom: 2px; }
+      .work-details summary::-webkit-details-marker { display: none; }
+      .work-details summary::after { margin-left: 8px; content: "+"; font-size: 15px; }
+      .work-details[open] summary { color: var(--paper); }
+      .work-details[open] summary::after { content: "−"; }
+      .work-details p { margin-top: 14px; }
 
       @media (max-width: 760px) {
         .timeline { padding-left: 34px; }
@@ -117,7 +100,7 @@
       @media (min-width: 761px) { .mobile-toggle { display: none; } }
       @media (max-width: 760px) { .desktop-toggle { display: none !important; } }
     </style>
-    <script src="assets/site.js" defer></script>
+    <script src="assets/site.js?v=2" defer></script>
   </head>
   <body>
     <a class="skip" href="#about">Skip to content</a>
@@ -163,23 +146,23 @@
         <div class="list">
           <article>
             <small>2026<br>Submitted research</small>
-            <div><h3>Share-borne AI Virus</h3><i>Memory-hopping attacks across LLM agents</i><button class="work-toggle" type="button" aria-expanded="false" aria-controls="work-spar"><span>Read more</span><span class="toggle-symbol" aria-hidden="true">+</span></button><div id="work-spar" class="work-details"><p>In SPAR research, I designed controlled experiments with independently operated assistants whose users exchange documents. We tested whether adversarial text in one artifact could enter an assistant’s persistent memory, resurface in an unrelated document it later writes, and then be taken up by another assistant. I worked on memory injection, reinfection and multi-hop hand-offs, measuring whether the attack persisted and how far it spread.</p></div></div>
+            <div><h3>Share-borne AI Virus</h3><i>Memory-hopping attacks across LLM agents</i><details class="work-details"><summary>Read more</summary><p>In SPAR research, I designed controlled experiments with independently operated assistants whose users exchange documents. We tested whether adversarial text in one artifact could enter an assistant’s persistent memory, resurface in an unrelated document it later writes, and then be taken up by another assistant. I worked on memory injection, reinfection and multi-hop hand-offs, measuring whether the attack persisted and how far it spread.</p></details></div>
           </article>
           <article>
             <small>2026—<br>Ongoing / preliminary</small>
-            <div><h3>Sycophancy Is Steerable</h3><i>Learning behavioural directions with RL</i><button class="work-toggle" type="button" aria-expanded="false" aria-controls="work-sycophancy"><span>Read more</span><span class="toggle-symbol" aria-hidden="true">+</span></button><div id="work-sycophancy" class="work-details"><p>In an ARENA capstone, I froze LLaMA 3.1 8B-Instruct and trained additive steering vectors in its transformer layers using RLOO-style reinforcement learning. GPT-5 scored generated answers for agreement and flattery, while a KL penalty constrained drift from the unsteered model. Toy objectives helped validate the training loop; early sycophancy runs changed the judged responses. The work remains preliminary, with stronger controls and independent behavioural evaluation still to do.</p></div></div>
+            <div><h3>Sycophancy Is Steerable</h3><i>Learning behavioural directions with RL</i><details class="work-details"><summary>Read more</summary><p>In an ARENA capstone, I froze LLaMA 3.1 8B-Instruct and trained additive steering vectors in its transformer layers using RLOO-style reinforcement learning. GPT-5 scored generated answers for agreement and flattery, while a KL penalty constrained drift from the unsteered model. Toy objectives helped validate the training loop; early sycophancy runs changed the judged responses. The work remains preliminary, with stronger controls and independent behavioural evaluation still to do.</p></details></div>
           </article>
           <article>
             <small>2026<br>Multimodal evaluation</small>
-            <div><h3>ZeroBench</h3><button class="work-toggle" type="button" aria-expanded="false" aria-controls="work-zerobench"><span>Read more</span><span class="toggle-symbol" aria-hidden="true">+</span></button><div id="work-zerobench" class="work-details"><p>I co-authored ZeroBench (ICML26), a visual-reasoning benchmark of 100 manually curated questions and 334 diagnostic subquestions. The questions were adversarially filtered against frontier large multimodal models; the paper evaluates 46 models, compares them with a human baseline and analyses where their reasoning breaks down.<a class="project-link" href="https://zerobench.github.io/">Visit the project <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M6 3h7v7" /></svg></a></p></div></div>
+            <div><h3>ZeroBench</h3><details class="work-details"><summary>Read more</summary><p>I co-authored ZeroBench (ICML26), a visual-reasoning benchmark of 100 manually curated questions and 334 diagnostic subquestions. The questions were adversarially filtered against frontier large multimodal models; the paper evaluates 46 models, compares them with a human baseline and analyses where their reasoning breaks down.<a class="project-link" href="https://zerobench.github.io/">Visit the project <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M6 3h7v7" /></svg></a></p></details></div>
           </article>
           <article>
             <small>2025<br>Speech research</small>
-            <div><h3>Speech representations</h3><button class="work-toggle" type="button" aria-expanded="false" aria-controls="work-speech"><span>Read more</span><span class="toggle-symbol" aria-hidden="true">+</span></button><div id="work-speech" class="work-details"><p>At Cambridge’s Machine Intelligence Lab, I developed a speech-assessment pipeline for phonological impairment, including phone-level error scoring, articulatory-feature alignment and cohort analysis. I compared WavLM, Whisper and Wav2Vec2 representations with phoneme-level classifiers. Our poster reports an F1 of 0.826 for detecting mispronounced words through articulatory-feature alignment; distinguishing dyslexic participants from controls remained inconclusive on the small study dataset.<a class="project-link" href="https://www.cambridge.org/engage/coe/article-details/6926c8f7ef936fb4a2af2d1a">Read the research <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M6 3h7v7" /></svg></a></p></div></div>
+            <div><h3>Speech representations</h3><details class="work-details"><summary>Read more</summary><p>At Cambridge’s Machine Intelligence Lab, I developed a speech-assessment pipeline for phonological impairment, including phone-level error scoring, articulatory-feature alignment and cohort analysis. I compared WavLM, Whisper and Wav2Vec2 representations with phoneme-level classifiers. Our poster reports an F1 of 0.826 for detecting mispronounced words through articulatory-feature alignment; distinguishing dyslexic participants from controls remained inconclusive on the small study dataset.<a class="project-link" href="https://www.cambridge.org/engage/coe/article-details/6926c8f7ef936fb4a2af2d1a">Read the research <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M6 3h7v7" /></svg></a></p></details></div>
           </article>
           <article>
             <small>2024—2025<br>Master’s research</small>
-            <div><h3>Additive Gaussian processes</h3><button class="work-toggle" type="button" aria-expanded="false" aria-controls="work-gp"><span>Read more</span><span class="toggle-symbol" aria-hidden="true">+</span></button><div id="work-gp" class="work-details"><p>For my Master’s project, I investigated identifiability in additive Gaussian processes: different components can explain overlapping parts of the same signal, making the decomposition hard to interpret. I developed mutual-information regularisation to discourage redundant learned components and encourage a more parsimonious decomposition. This project shaped my interest in what an apparently interpretable model actually represents.</p></div></div>
+            <div><h3>Additive Gaussian processes</h3><details class="work-details"><summary>Read more</summary><p>For my Master’s project, I investigated identifiability in additive Gaussian processes: different components can explain overlapping parts of the same signal, making the decomposition hard to interpret. I developed mutual-information regularisation to discourage redundant learned components and encourage a more parsimonious decomposition. This project shaped my interest in what an apparently interpretable model actually represents.</p></details></div>
           </article>
         </div>
       </section>
